@@ -7,10 +7,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
-/* body{
+body{
     background-color: black;
     color: white;
-} */
+}
 
 .left{
     width: 25vw;
@@ -62,4 +62,15 @@
 }
 .footer a{
     color: gray;
+}
+
+.right{
+    margin: 16px 0;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+.header >*{
+    padding: 4px;
 }
