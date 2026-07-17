@@ -79,6 +79,7 @@ body{
     padding: 16px;
 }
 .cardcontainer{
+    margin: 30px;
     display: flex;
     flex-wrap: wrap;
     gap:10px
@@ -89,6 +90,7 @@ body{
     background-color: #252525;
     padding: 10px;
     border-radius: 5px;
+    position: relative;
 }
 .card *{
     padding-top: 10px;
@@ -97,4 +99,9 @@ body{
 .card img{
     width: 100%;
     object-fit: contain;
+}
+.play{
+    position: absolute;
+    right:16px;
+    bottom: 89px;
 }
