@@ -8,7 +8,7 @@ async function getSongs() {
         for (let i = 0; i < as.length; i++) {
             const element = as[i];
             if (element.href.endsWith(".m4a")) {
-            songs.push(element.href);
+            songs.push(element.href.split('/songs/')[1]);
             }
         }
         return songs;
@@ -16,7 +16,12 @@ async function getSongs() {
 async function main(){
     let songs = await getSongs();
     console.log(songs)
+    let songul = document.querySelector('.songlist').getElementsByTagName('ul')[0]
+    for (const song of songs) {
+        songul.innerHTML = songul.innerHTML + `<li>${song.replaceAll("%20", " ")}</li>` 
+    }
+
     let audio = new Audio(songs[0])
-    audio.play();
+    // audio.play();
 }
 main()
