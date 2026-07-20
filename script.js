@@ -27,8 +27,7 @@ async function main(){
                             <div class="playnow">
                                 <span>play now</span>
                                 <img class="invert" src="play.svg" alt="">
-                            </div>
-                        </li>` 
+                            </div></li>`
     }
 
     let audio = new Audio(songs[0])

@@ -147,6 +147,7 @@ body{
     filter: invert(1);
     background-color: #dad5d5;
     border-radius: 30px;
+    height: 30px;
 }
 .songlist{
     height: 644px;
@@ -188,4 +189,21 @@ body{
 .playnow span{
     font-size: 15px;
     width: 85px;
+}
+
+.seekbar{
+    height: 2px;
+    width :72vw;
+    border:2px solid black;
+    position: absolute;
+    bottom: 0;
+    border-radius: 10px;
+}
+.circle{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: black;
+    position: relative;
+    bottom: 9px;
 }
