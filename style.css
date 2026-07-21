@@ -76,6 +76,13 @@ body{
 .header >*{
     padding: 15px;
 }
+.hamburgerContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+}
+
 .spotifyPlaylist{
     padding: 16px;
 }
@@ -221,4 +228,21 @@ body{
 .abovebar{
     display: flex;
     justify-content: space-between;
+}
+
+@media (max-width: 1300px) {
+    .left{
+        position: absolute;
+        background-color: red;
+        z-index: 1;
+        transition: all .1s;
+        left: -100%;
+    }
+    .right{
+        width: 100vw;
+    }
+    .playbar{
+        width: 95vw;
+    }
+    
 }
