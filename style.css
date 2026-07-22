@@ -91,7 +91,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     gap:10px;
-    overflow-y: scroll;
+    overflow-y: auto    ;
     max-height: 70vh;
 
 }
@@ -154,7 +154,7 @@ body{
     filter: invert(1);
     background-color: #dad5d5;
     border-radius: 10px;
-    height: 35px;
+    min-height: 35px;
 }
 .songlist{
     height: 644px;
@@ -233,16 +233,25 @@ body{
 @media (max-width: 1300px) {
     .left{
         position: absolute;
-        background-color: red;
         z-index: 1;
         transition: all .1s;
-        left: -100%;
+        left: -120%;
+        width: 425px;
+        background-color: black;
     }
     .right{
         width: 100vw;
     }
     .playbar{
         width: 95vw;
+    }
+    .left .close{
+        position: absolute;
+        right: 26px;
+        top: 26px;
+    }
+    .seekbar{
+        width: 90%;
     }
     
 }

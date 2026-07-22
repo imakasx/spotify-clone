@@ -90,6 +90,13 @@ async function main(){
         currentsong.currentTime = ((currentsong.duration) * precent)/100
     })
 
+    document.querySelector(".hamburgerContainer").addEventListener("click",()=>{
+        document.querySelector(".left").style.left="0%"
+    })
+    document.querySelector(".close").addEventListener("click",()=>{
+        document.querySelector(".left").style.left="-120%"
+    })
+
 
 }
 main()
