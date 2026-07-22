@@ -33,7 +33,7 @@ const playmusic = (track, pause = false) => {
     currentsong.src = "/songs/"+ track
     if(!pause){
         currentsong.play();
-        play.src = "pause.svg";
+        play.src = "img/pause.svg";
     }
     document.querySelector(".songinfo").innerHTML = decodeURI(track);
     document.querySelector(".songTime").innerHTML = "00:00/00:00"
@@ -46,14 +46,14 @@ async function main(){
     let songul = document.querySelector('.songlist').getElementsByTagName('ul')[0]
     for (const song of songs) {
         songul.innerHTML = songul.innerHTML + `<li>
-                            <img class="invert s" src="music.svg" alt="">
+                            <img class="invert s" src="img/music.svg" alt="">
                             <div class="info">
                                 <div>${song.replaceAll("%20", " ")}</div>
                                 <div>akash</div>
                             </div>
                             <div class="playnow">
                                 <span>play now</span>
-                                <img class="invert" src="play.svg" alt="">
+                                <img class="invert" src="img/play.svg" alt="">
                             </div></li>`
     }
 
@@ -67,11 +67,11 @@ async function main(){
     play.addEventListener("click", ()=>{
         if(currentsong.paused){
             currentsong.play();
-            play.src ="pause.svg"
+            play.src ="img/pause.svg"
             
         }else{
             currentsong.pause();
-            play.src = "play.svg"
+            play.src = "img/play.svg"
         }
     })
 

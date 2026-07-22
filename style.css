@@ -90,10 +90,9 @@ body{
     margin: 30px;
     display: flex;
     flex-wrap: wrap;
-    gap:10px;
-    overflow-y: auto    ;
-    max-height: 70vh;
-
+    gap: 10px;
+    overflow-y: auto;
+    max-height: 85vh;
 }
 .card{
     width: 200px;
@@ -242,16 +241,30 @@ body{
     .right{
         width: 100vw;
     }
-    .playbar{
-        width: 95vw;
+    .playbar {
+        width: calc(100vw - 20px); 
+        
     }
+    .songbtn{
+        width: 61%;
+        height: 30px;
+        gap:8px
+    }
+
+    .seekbar {
+        width: calc(100vw - 22px);
+    }
+    
     .left .close{
         position: absolute;
         right: 26px;
         top: 26px;
     }
-    .seekbar{
-        width: 90%;
+    .cardcontainer{
+        justify-content: center;
+        margin: 0;
     }
-    
+    .card{
+        width: 71vw;
+    }
 }
