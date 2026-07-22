@@ -11,7 +11,9 @@ body{
     background-color: black;
     color: white;
 }
-
+.close{
+    display: none;
+}
 .left{
     width: 25vw;
     padding: 10px;
@@ -86,6 +88,7 @@ body{
 .spotifyPlaylist{
     padding: 16px;
 }
+
 .cardcontainer{
     margin: 30px;
     display: flex;
@@ -240,10 +243,11 @@ body{
     }
     .right{
         width: 100vw;
+        margin: 0;
     }
     .playbar {
         width: calc(100vw - 20px); 
-        
+        min-height: 20px;
     }
     .songbtn{
         width: 61%;
@@ -254,7 +258,11 @@ body{
     .seekbar {
         width: calc(100vw - 22px);
     }
-    
+
+    .close{
+        display: block;
+    }
+
     .left .close{
         position: absolute;
         right: 26px;
@@ -262,9 +270,17 @@ body{
     }
     .cardcontainer{
         justify-content: center;
-        margin: 0;
+        margin: 0vw;
     }
     .card{
-        width: 71vw;
+        width: 90vw;
+    }
+    .abovebar{
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+    .spotifyPlaylist h1{
+        padding: 16px;
     }
 }
