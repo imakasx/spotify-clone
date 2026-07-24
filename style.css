@@ -167,7 +167,7 @@ body{
     display: flex;
     justify-content: center;
     gap: 12px;
-    
+    height: 24px;
 }
 .songlist ul{
     padding: 0 12px;
@@ -223,6 +223,24 @@ body{
 .songbtn img{
     cursor: pointer;
 }
+.songvol{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width:275px;
+}
+.volume{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.songinfo{
+    color: black;
+    padding: 0 20px;
+    width: 200px;
+}
 .songinfo, .songTime{
     color: black;
     padding: 0 20px;
@@ -240,6 +258,7 @@ body{
         left: -120%;
         width: 425px;
         background-color: black;
+        padding: 0;
     }
     .right{
         width: 100vw;
@@ -253,6 +272,20 @@ body{
         width: 61%;
         height: 30px;
         gap:8px
+    }
+    .songinfo,
+    .songtime {
+        width: auto;
+    }
+    .songvol{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+    }
+    .volume{
+        padding: 4px;
     }
 
     .seekbar {
@@ -283,4 +316,4 @@ body{
     .spotifyPlaylist h1{
         padding: 16px;
     }
-}
+}   
