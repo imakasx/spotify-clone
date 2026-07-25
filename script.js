@@ -64,11 +64,27 @@ const playmusic = (track, pause = false) => {
     document.querySelector(".songTime").innerHTML = "00:00/00:00"
 }
 
+async function displayAlbums(){
+    let a = await fetch(`http://127.0.0.1:5500/songs/`);
+    let response = await a.text();
+    let div = document.createElement("div");
+    div.innerHTML = response;
+    let ancor =div.getElementsByTagName("a")
+    Array.from(ancor).forEach(e=>{
+        if(e.href.includes("/songs")){
+            console.log(e.href.split("/").slice(-1)[0])
+        }
+    })  
+}
+
+
+
+
 async function main(){
     await getSongs("songs/op");
     // console.log(songs)
     playmusic(songs[0], true)
-    
+    displayAlbums()
 
     play.addEventListener("click", ()=>{
         if(currentsong.paused){
