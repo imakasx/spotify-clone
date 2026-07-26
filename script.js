@@ -84,7 +84,7 @@ async function displayAlbums(){
             let response = await a.json();
             // console.log(response);
 
-            cardcontainer.innerHTML = cardcontainer.innerHTML + ` <div data-folder="op" class="card">
+            cardcontainer.innerHTML = cardcontainer.innerHTML + ` <div data-folder=${folder} class="card">
                         <div class="play">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
                                 <!-- Green Circle -->
@@ -168,9 +168,28 @@ async function main(){
 
     document.querySelector(".range").getElementsByTagName("input")[0].
     addEventListener("change" ,(e)=>{
-        console.log(e.target, e.target.value);
+        // console.log(e.target, e.target.value);
         // currentsong.volume = e.target.value/100
         currentsong.volume = parseInt(e.target.value)/100
     })
+
+    document.querySelector(".volume>img").addEventListener("click", e=>{
+        // console.log(e.target.src)
+        if(e.target.src.includes("img/volume.svg")){
+            // console.log("mute")
+            e.target.src = e.target.src.replace("img/volume.svg","img/mute.svg") 
+            currentsong.volume = 0
+            document.querySelector(".range").getElementsByTagName("input")[0].value = 0
+        }else{
+            e.target.src = e.target.src.replace("img/mute.svg","img/volume.svg") 
+            currentsong.volume = 0.10
+            document.querySelector(".range").getElementsByTagName("input")[0].value = 10
+
+        }
+    })
+
+
+
+
 }
 main()

@@ -242,6 +242,10 @@ body{
     align-items: center;
     justify-content: center;
     gap: 7px;
+    cursor: pointer;
+}
+.range{
+    cursor: pointer;
 }
 
 .songinfo{
