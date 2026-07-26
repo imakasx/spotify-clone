@@ -70,11 +70,44 @@ async function displayAlbums(){
     let div = document.createElement("div");
     div.innerHTML = response;
     let ancor =div.getElementsByTagName("a")
-    Array.from(ancor).forEach(e=>{
-        if(e.href.includes("/songs")){
-            console.log(e.href.split("/").slice(-1)[0])
+    let cardcontainer = document.querySelector(".cardcontainer");
+    let array = Array.from(ancor);
+    for (let index = 0; index < array.length; index++) {
+        const e = array[index];
+        // console.log(e)
+        
+    
+        if(e.href.includes("/songs/")){
+            let folder = e.href.split("/").slice(-1)[0];
+            // console.log(folder);
+            let a = await fetch(`http://127.0.0.1:5500/songs/${folder}/input.json`);
+            let response = await a.json();
+            // console.log(response);
+
+            cardcontainer.innerHTML = cardcontainer.innerHTML + ` <div data-folder="op" class="card">
+                        <div class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+                                <!-- Green Circle -->
+                                <circle cx="24" cy="24" r="22" fill="#22C55E" />
+                            
+                                <!-- Play Icon -->
+                                <path
+                                    d="M30.8906 24.846C30.5371 26.189 28.8667 27.138 25.5257 29.0361C22.296 30.8709 20.6812 31.7884 19.3798 31.4196C18.8418 31.2671 18.3516 30.9776 17.9562 30.5787C17 29.6139 17 27.7426 17 24C17 20.2574 17 18.3861 17.9562 17.4213C18.3516 17.0224 18.8418 16.7329 19.3798 16.5804C20.6812 16.2116 22.296 17.1291 25.5257 18.9639C28.8667 20.862 30.5371 21.811 30.8906 23.154C31.0365 23.7084 31.0365 24.2916 30.8906 24.846Z";
+                                    fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round" />
+                            </svg>
+                        </div>  
+                        <img src= "/songs/${folder}/cover.jpg" alt="">
+                        <h1>${response.title}</h1>
+                        <p>${response.description}</p>
+                    </div>`
         }
-    })  
+    } 
+    Array.from(document.getElementsByClassName("card")).forEach(e=>{
+        e.addEventListener("click", async item=>{
+            songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`)
+            // console.log(songs)
+        })
+    })
 }
 
 
@@ -140,15 +173,6 @@ async function main(){
         console.log(e.target, e.target.value);
         // currentsong.volume = e.target.value/100
         currentsong.volume = parseInt(e.target.value)/100
-    })
-
-
-
-    Array.from(document.getElementsByClassName("card")).forEach(e=>{
-        e.addEventListener("click", async item=>{
-            songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`)
-            // console.log(songs)
-        })
     })
 }
 main()
