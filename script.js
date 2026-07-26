@@ -111,8 +111,6 @@ async function displayAlbums(){
 }
 
 
-
-
 async function main(){
     await getSongs("songs/op");
     // console.log(songs)
