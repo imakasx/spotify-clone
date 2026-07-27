@@ -253,9 +253,13 @@ body{
     padding: 0 20px;
     width: 200px;
 }
-.songinfo, .songTime{
+.songinfo{
     color: black;
     padding: 0 20px;
+}
+.songTime{
+    color: black;
+    padding: 0;
 }
 .abovebar{
     display: flex;
