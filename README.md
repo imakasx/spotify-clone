@@ -42,7 +42,7 @@ A responsive Spotify-inspired music player built using **HTML, CSS, and JavaScri
 
 ### 📱 Mobile Responsive View
 
-![Mobile](screenshots/mobileUi.png)
+![Mobile](screenshots/mobileUI.png)
 
 *Responsive layout optimized for mobile devices.*
 
